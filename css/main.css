@@ -1,0 +1,71 @@
+@charset utf-8;
+#box{
+	height:600px;
+	width:600px;
+	margin:150px auto;
+	border:1px solid red;
+	perspective: 300px;
+}
+
+#position{
+	width:100px;
+	height:100px;
+	margin:220px auto;
+	position: relative;
+	transition: 2s;
+-moz-transition: 2s;	/* Firefox 4 */
+-webkit-transition: 2s;	 /*Safari 和 Chrome */
+-o-transition:2s;
+-ms-transition:2s;
+	transform-style: preserve-3d;	
+	transform-origin: center center -50px;
+}
+
+.littlebox{
+	width:100px;
+	height:100px;
+	position: absolute;
+	text-align: center;
+	line-height: 100px;
+	filter:alpha(opacity=50); 
+-moz-opacity:0.5; 
+opacity:0.5;
+}
+
+
+
+.littlebox:nth-of-type(1){
+	background-color: pink;
+	top:-100px;
+	transform:rotateX(90deg); 
+	transform-origin: bottom;
+}
+.littlebox:nth-of-type(2){
+	background-color: lightgreen;
+	left:-100px;
+	transform:rotateY(-90deg); 
+	transform-origin:right;
+}
+.littlebox:nth-of-type(3){
+	background-color: grey;
+}
+.littlebox:nth-of-type(4){
+	background-color: blue;
+	right:-100px;
+	transform:rotateY(90deg); 
+	transform-origin:left;
+}
+.littlebox:nth-of-type(5){
+	background-color:red;
+	bottom:-100px;
+	transform:rotateX(-90deg); 
+	transform-origin:top;
+}
+.littlebox:nth-of-type(6){
+	background-color: yellow;
+	transform: translateZ(-100px) rotateX(-180deg);
+}
+
+#box:hover #position{
+	transform: rotateX(340deg) rotateY(280deg);
+}
